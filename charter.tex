@@ -62,12 +62,12 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-1.0      & Creación del documento                                          & 27/06/2020 \\ \hline
-1.1      & Avances en alguna cosa                                          & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                     & dd/mm/aaaa \\ \hline
+1.0      & Creación del documento                                          & 02/11/2020 \\ \hline
+%1.1      & Avances en alguna cosa                                          %& dd/mm/aaaa \\ \hline
+%1.2      & Otro ejemplo \newline
+%		   Con texto partido \newline
+%		   En varias líneas \newline
+%		   A propósito                                                     %& dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un sistema de control de temperatura de un calefón, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá en el desarrollo de un sistema de control inalámbrico y de bajo costo para invernaderos y/o indoors domésticos, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y {\$5.345}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,36 +107,33 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+\begin{consigna}{black}
+La empresa Wentux ha desarrollado un sistema de control para invernaderos y/o indoors domésticos de bajo costo y que requiere mínimo conocimiento técnico y electrónico para su instalación y puesta en funcionamiento. Este sistema, controla y monitorea variables como humedad, temperatura, ventilación, riego, calefacción, co2 e iluminación.
+Las distintas variables de control, se visualizan mediante un dispositivo móvil o una computadora.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+En la actualidad, en el sistema de control, los diversos sensores se conectan a través de cables a un sistema embebido central que procesa la información recibida. La solución actual, atenta contra la comodidad y simple instalación que la empresa tiene como objetivo en sus equipos. Por tal motivo, se tiene como propósito, modificar el cableado por una red de sensores inalámbrica (Wireless Sensor Network), por la cual se envíen los datos recolectados de los cultivos al dispositivo embebido central, a fin de visualizar y controlar en tiempo real los valores obtenidos, eliminando el cableado que posee el sistema.
 
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
+Esta solución deberá ser flexible y de fácil adaptación, a cualquier tipo de invernadero y/o indoor, así como también, deberá implementar funciones de ahorro de energía para alargar la vida útil de las baterías utilizadas en cada sensor inalámbrico.
+Cada sensor inalámbrico (de ahora en más "nodo"), estará compuesto por un conjunto de componentes: microcontrolador, módulo inalámbrico, sensor y batería. Estos nodos, se comunicarán con la central a través de la red inalámbrica, usando un protocolo de comunicación entre ellos, cuya creación y método de encriptado forma parte del desarrollo de la solución.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la Figura \ref{fig:diagBloques} se observa el diagrama de bloques de la solución a abordar. Como se mencionó anteriormente, se pueden observar los distintos nodos de la red de sensores inalámbrica, compuestos por el conjunto de componentes detallado. Estos nodos se comunicarán con otro nodo central que estará embebido en el sistema de control que ya tiene desarrollado Wentux, con el cual deberán comunicarse usando el protocolo de comunicación a desarrollar.
+El nodo central no tendrá una batería ni ningún tipo de sensor, este nodo se utilizará como receptor "maestro" que recibirá toda la información obtenida de los distintos nodos, y a su vez, como emisor "maestro" para dar instrucciones a los nodos de su red, o bien, para configurar valores en cada nodo.
+Finalmente, el nodo maestro es quien disponibilizará la información recavada de los nodos en el dispositivo móvil o computadora.
 
 \vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.9\textwidth]{./Figuras/Figura1.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
 \end{consigna}
+
+
 
 
 \section{Identificación y análisis de los interesados}
