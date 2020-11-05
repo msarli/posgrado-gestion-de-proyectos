@@ -14,8 +14,8 @@
 \autor{Maximiliano Sarli} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Mg. Ing. Gonzalo Sanchez}
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{} % si queda vacio no se deberíá incluir 
 \pertenenciaCoDirector{}
@@ -139,19 +139,7 @@ Finalmente, el nodo maestro es quien disponibilizará la información recavada d
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
+\begin{consigna}{black} 
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -160,32 +148,19 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& CEO       \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & Raúl Palavecino   & -             	& Estudiante ingeniería electrónica       	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Productores e \newline independientes \newline pequeña/mediana \newline escala. \newline Agricultura, \newline frutihortícola, plantas \newline ornamentales. Profesionales \newline dedicados a \newline climatizar \newline recintos para \newline diversos usos.                 & -             	& -       	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Sería deseable listar a continuación de la tabla las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
+\item Cliente Pablo Lodeti: CEO de Wentux. Desarrolló el actual producto que tiene la empresa .
+\item Colaborador Raúl Palavecino: Estudiante de la carrera ingeniería en electrónica y persona con experiencia en embebidos. 
+\item Orientador Gonzalo Sanchez: Magister en sistema embebidos con experiencia en el microcontrolador a utilizar.
 \end{itemize}
 
 \end{consigna}
@@ -195,23 +170,18 @@ Por ejemplo:
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+\begin{consigna}{black}
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
+El propósito del proyecto es desarrollar una red de sensores inalámbrica para eliminar las incomodidades y restricciones, que genera el cableado actual que tienen los equipos. Perjudicando la instalación y el uso diario en los invernaderos/indoors.
 \end{consigna}
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{consigna}{black}
+El proyecto incluye el desarrollo del firmware para la comunicación de los nodos con la central, prueba de prototipo  funcional y su puesta en funcionamiento en una pequeña  planta  dentro de las instalaciones del  taller ó en  planta modelo  montada por colaborador  para pruebas, simulando el  invernadero a controlar. También se incluye el desarrollo del hardware del conjunto microcontrolador, sensor, batería y módulo inalámbrico (nodos). 
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El proyecto no incluye la puesta en funcionamiento en campo y posterior mantenimiento .
 
 \end{consigna}
 
@@ -219,72 +189,81 @@ Explicitar además todo lo que no quede incluido (``El presente proyecto no incl
 \section{3. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+\begin{consigna}{black}
 
 \begin{itemize}
-\item Supuesto 1
-\item Supuesto 2...
+\item El cliente proveerá los fondos para la compra de sensores,  actuadores y materiales varios para desarrollar la red de sensores.
+\item El cliente deberá proveer un equipo funcionando con la cual la rede deberá comunicarse, reemplazando los actuales sensores cableados.
+\item El cliente proveerá un entorno o invernadero/indoor piloto. de prueba.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 \end{consigna}
 
 \section{4. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
+\begin{consigna}{black}
+Los requerimientos surgen del análisis realizado a la propuesta y relevamiento de proyecto que envía el cliente. Se detallan a continuación, agrupados por afinidad e indicando en cada uno su prioridad, siendo [0] la más alta y [3] la más baja.
 
 \begin{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Grupo de requerimientos asociados con comunicación
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2
-	\item Requerimiento 3 (prioridad menor)
+	\item Cada nodo deberá enviar la información tomada del sensor a la central [0].
+	\item Se deberá desarrollar un protocolo de comunicación entre la central y los nodos [0].
+	\item Los nodos tendrán un sistema de reintento de envío de información a la central en caso de falla en la misma [2].
+	\item Los nodos almacenarán en memoria interna información no enviada hasta que la misma se envíe en un reintento[3].
+	\item La comunicación deberá estar protegida mediante un algoritmo de encriptación para que no sea alterada externamente [3].
 	\end{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Grupo de requerimientos asociados con alimentación
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2 (prioridad menor)
+	\item Los nodos estarán alimentados por batería como fuente eléctrica [0].
+	\item Se deberá desarrollar una función de ahorro de batería en los nodos [1].
 	\end{enumerate}
+\item Grupo de requerimientos asociados con disposición
+	\begin{enumerate}
+	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería [0].
+	\item El sistema debe permitir instalarse en cualquier invernadero o indoor [2].
+	\end{enumerate}
+
+
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-De ser posible indicar cómo se obtuvieron cada uno de los requerimientos 
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-\item Ser breve y conciso (nadie lee cosas largas). 
-\item Ser específico: no dejar lugar a confusiones.
-\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
 
 \end{consigna}
 
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+\begin{consigna}{black}
+
+Se enumeran las historias de usuario y su ponderación calculada en story points (del [1] al [5]).
+
+\begin{enumerate}
+\item Como cliente del proyecto quiero poder visualizar la información obtenida de los sensores en tiempo real [2].
+
+\item Como usuario del producto quiero instalarlo de manera práctica, flexible y sin conocimiento técnico [1].
+
+\item Como cliente del proyecto quiero eliminar el cableado del producto final [5].
+
+\item Como cliente del proyecto quiero despreocuparme de la duración de las baterías [4].
+
+\end{enumerate}
+
+
 \end{consigna}
 
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
+\begin{consigna}{black}
 Cosas como: 
 \begin{itemize}
+\item Informe de avance
 \item Manual de uso
-\item Diagrama esquemático
 \item Código fuente
-\item Diagrama de instalación
-\item Informe final
+\item Prototipo funcional
+\item Manual de instalación
+\item Memoria técnica
+\item Lecciones aprendidas
 
 \end{itemize}
 
