@@ -63,11 +63,9 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 02/11/2020 \\ \hline
-%1.1      & Avances en alguna cosa                                          %& dd/mm/aaaa \\ \hline
-%1.2      & Otro ejemplo \newline
-%		   Con texto partido \newline
-%		   En varias líneas \newline
-%		   A propósito                                                     %& dd/mm/aaaa \\ \hline
+1.1      & Avances hasta definición de requerimientos                                          & 04/11/2020 \\ \hline
+1.2      & Cierre primer entregable con WBS terminada
+& 06/11/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -84,7 +82,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá en el desarrollo de un sistema de control inalámbrico y de bajo costo para invernaderos y/o indoors domésticos, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y {\$5.345}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá en el desarrollo de un sistema de control inalámbrico y de bajo costo para invernaderos y/o indoors domésticos, y tendrá un presupuesto preliminar estimado de 603 hs de trabajo y {\$5.345}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -113,7 +111,7 @@ Las distintas variables de control, se visualizan mediante un dispositivo móvil
 
 En la actualidad, en el sistema de control, los diversos sensores se conectan a través de cables a un sistema embebido central que procesa la información recibida. La solución actual, atenta contra la comodidad y simple instalación que la empresa tiene como objetivo en sus equipos. Por tal motivo, se tiene como propósito, modificar el cableado por una red de sensores inalámbrica (Wireless Sensor Network), por la cual se envíen los datos recolectados de los cultivos al dispositivo embebido central, a fin de visualizar y controlar en tiempo real los valores obtenidos, eliminando el cableado que posee el sistema.
 
-Esta solución deberá ser flexible y de fácil adaptación, a cualquier tipo de invernadero y/o indoor, así como también, deberá implementar funciones de ahorro de energía para alargar la vida útil de las baterías utilizadas en cada sensor inalámbrico.
+Esta solución deberá ser flexible y de fácil adaptación a cualquier tipo de invernadero y/o indoor, así como también, deberá implementar funciones de ahorro de energía para alargar la vida útil de las baterías utilizadas en cada sensor inalámbrico.
 Cada sensor inalámbrico (de ahora en más "nodo"), estará compuesto por un conjunto de componentes: microcontrolador, módulo inalámbrico, sensor y batería. Estos nodos, se comunicarán con la central a través de la red inalámbrica, usando un protocolo de comunicación entre ellos, cuya creación y método de encriptado forma parte del desarrollo de la solución.
 
 En la Figura \ref{fig:diagBloques} se observa el diagrama de bloques de la solución a abordar. Como se mencionó anteriormente, se pueden observar los distintos nodos de la red de sensores inalámbrica, compuestos por el conjunto de componentes detallado. Estos nodos se comunicarán con otro nodo central que estará embebido en el sistema de control que ya tiene desarrollado Wentux, con el cual deberán comunicarse usando el protocolo de comunicación a desarrollar.
@@ -194,7 +192,7 @@ El proyecto no incluye la puesta en funcionamiento en campo y posterior mantenim
 \begin{itemize}
 \item El cliente proveerá los fondos para la compra de sensores,  actuadores y materiales varios para desarrollar la red de sensores.
 \item El cliente deberá proveer un equipo funcionando con la cual la rede deberá comunicarse, reemplazando los actuales sensores cableados.
-\item El cliente proveerá un entorno o invernadero/indoor piloto. de prueba.
+\item El cliente proveerá un entorno o invernadero/indoor piloto de prueba.
 \end{itemize}
 
 \end{consigna}
@@ -255,7 +253,8 @@ Se enumeran las historias de usuario y su ponderación calculada en story points
 \label{sec:entregables}
 
 \begin{consigna}{black}
-Cosas como: 
+Los entregables del proyecto son:
+
 \begin{itemize}
 \item Informe de avance
 \item Manual de uso
@@ -272,35 +271,59 @@ Cosas como:
 \section{6. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-Se recomienda mostrar el WBS mediante una lista indexada:
+\begin{consigna}{black}
+El proyecto se divide en las siguientes tareas:
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item \textbf{Gestión del proyecto: 68 hs}
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Planificación del proyecto (20 hs)
+	\item Confección informe de avance (8 hs)
+	\item Análisis y relevamiento inicial (15 hs)
+	\item Confección manual de instalación (10 hs)
+	\item Confección manual de uso (15 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item \textbf{Hardware: 42 hs}
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Definición de componentes (7 hs)
+	\item Compra de componentes (5 hs)
+	\item Diseño de prototipos de los nodos (10 hs)
+	\item Elaboración/construcción de los nodos (20 hs)
 	\end{enumerate}
-	\item Grupo de tareas 3
+\item \textbf{Firmware: 238 hs}
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Diseño de la solución (28 hs)
+	\item Configuración de herramientas y plataforma de desarrollo (21 hs)
+	\item Estudio y aprendizaje para el desarrollo de los componentes (20 hs)
+	\item Desarrollo del protocolo de comunicación y su encriptación (40 hs)
+	\item Desarrollo de la función ahorro de batería (33 hs)
+	\item Desarrollo de configuración inicial de nuevo nodo en la red (35 hs)
+	\item Desarrollo de los componentes de medición y almacenamiento (32 hs)
+	\item Desarrollo del módulo de reenvío (29 hs)
+	\end{enumerate}
+\item \textbf{Testing y verificación: 115 hs}
+	\begin{enumerate}
+	\item Testing unitario del protocolo de comunicación (20 hs)
+	\item Testing unitario de la función de ahorro de batería (15 hs)
+	\item Testing unitario de nuevo nodo en red (18 hs)
+	\item Testing unitario de la medición, almacenamiento y reenvío (25 hs)
+	\item Testing de integración (37 hs)
+	\end{enumerate}
+\item \textbf{Implementación e integración: 50 hs}
+	\begin{enumerate}
+	\item Integración de los componentes con un producto final reemplazando sensores cableados (20 hs)
+	\item Implementación del prototipo en una planta real (indoor o invernadero) (30 hs)
+	\end{enumerate}
+\item \textbf{Presentación del trabajo: 90 hs}
+	\begin{enumerate}
+	\item Confección de la memoria (60 hs)
+	\item Lecciones aprendidas (10 hs)
+	\item Preparación de la presentación final (20 hs)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+\textbf{Cantidad total de horas: (603 hs)}
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
 \end{consigna}
 
