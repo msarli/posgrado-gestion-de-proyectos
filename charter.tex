@@ -1,7 +1,7 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Red de sensores inalámbricos} 
+\titulo{Red de sensores inalámbricos en invernaderos e indoors automatizados} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -11,7 +11,7 @@
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Maximiliano Sarli} 
+\autor{Ing. Maximiliano Sarli} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Mg. Ing. Gonzalo Sanchez}
@@ -66,6 +66,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1.1      & Avances hasta definición de requerimientos                                          & 04/11/2020 \\ \hline
 1.2      & Cierre primer entregable con WBS terminada
 & 06/11/2020 \\ \hline
+1.3      & Correciones de la primer entrega e historias de usuarios
+& 06/11/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -107,16 +109,17 @@ Se adjunta a esta acta la planificación inicial.
 
 \begin{consigna}{black}
 La empresa Wentux ha desarrollado un sistema de control para invernaderos y/o indoors domésticos de bajo costo y que requiere mínimo conocimiento técnico y electrónico para su instalación y puesta en funcionamiento. Este sistema, controla y monitorea variables como humedad, temperatura, ventilación, riego, calefacción, co2 e iluminación.
-Las distintas variables de control, se visualizan mediante un dispositivo móvil o una computadora.
+Las distintas variables de control se visualizan mediante un dispositivo móvil o una computadora.
 
-En la actualidad, en el sistema de control, los diversos sensores se conectan a través de cables a un sistema embebido central que procesa la información recibida. La solución actual, atenta contra la comodidad y simple instalación que la empresa tiene como objetivo en sus equipos. Por tal motivo, se tiene como propósito, modificar el cableado por una red de sensores inalámbrica (Wireless Sensor Network), por la cual se envíen los datos recolectados de los cultivos al dispositivo embebido central, a fin de visualizar y controlar en tiempo real los valores obtenidos, eliminando el cableado que posee el sistema.
+En la actualidad, en el sistema de control, los diversos sensores se conectan a través de cables a un sistema embebido central que procesa la información recibida. La solución actual, atenta contra la comodidad y simpleza de instalación que la empresa tiene como objetivo en sus equipos. Por tal motivo, se tiene como propósito, reemplazar el cableado por una red de sensores inalámbrica (Wireless Sensor Network), por la cual se envíen los datos recolectados de los cultivos al dispositivo embebido central.
 
 Esta solución deberá ser flexible y de fácil adaptación a cualquier tipo de invernadero y/o indoor, así como también, deberá implementar funciones de ahorro de energía para alargar la vida útil de las baterías utilizadas en cada sensor inalámbrico.
 Cada sensor inalámbrico (de ahora en más "nodo"), estará compuesto por un conjunto de componentes: microcontrolador, módulo inalámbrico, sensor y batería. Estos nodos, se comunicarán con la central a través de la red inalámbrica, usando un protocolo de comunicación entre ellos, cuya creación y método de encriptado forma parte del desarrollo de la solución.
 
 En la Figura \ref{fig:diagBloques} se observa el diagrama de bloques de la solución a abordar. Como se mencionó anteriormente, se pueden observar los distintos nodos de la red de sensores inalámbrica, compuestos por el conjunto de componentes detallado. Estos nodos se comunicarán con otro nodo central que estará embebido en el sistema de control que ya tiene desarrollado Wentux, con el cual deberán comunicarse usando el protocolo de comunicación a desarrollar.
-El nodo central no tendrá una batería ni ningún tipo de sensor, este nodo se utilizará como receptor "maestro" que recibirá toda la información obtenida de los distintos nodos, y a su vez, como emisor "maestro" para dar instrucciones a los nodos de su red, o bien, para configurar valores en cada nodo.
-Finalmente, el nodo maestro es quien disponibilizará la información recavada de los nodos en el dispositivo móvil o computadora.
+
+El nodo central no tendrá una batería ni ningún tipo de sensor. Este nodo se utilizará como receptor "maestro" {} que recibirá toda la información obtenida de los distintos nodos, y a su vez, como emisor  "maestro" {} para dar instrucciones a los nodos de su red, o bien, para configurar valores en cada nodo.
+Finalmente, el nodo maestro es quien hará disponible la información recavada de los nodos en el dispositivo móvil o computadora.
 
 \vspace{25px}
 
@@ -170,14 +173,14 @@ Usuario final & Productores e \newline independientes \newline pequeña/mediana 
 
 \begin{consigna}{black}
 
-El propósito del proyecto es desarrollar una red de sensores inalámbrica para eliminar las incomodidades y restricciones, que genera el cableado actual que tienen los equipos. Perjudicando la instalación y el uso diario en los invernaderos/indoors.
+El propósito del proyecto es desarrollar una red de sensores inalámbrica para eliminar las incomodidades y restricciones que genera el cableado actual que tienen los equipos. De esta forma, la nueva red de sensores inalámbrica beneficiará la instalación y la comodidad en el uso diario de los equipos.
 \end{consigna}
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
 
 \begin{consigna}{black}
-El proyecto incluye el desarrollo del firmware para la comunicación de los nodos con la central, prueba de prototipo  funcional y su puesta en funcionamiento en una pequeña  planta  dentro de las instalaciones del  taller ó en  planta modelo  montada por colaborador  para pruebas, simulando el  invernadero a controlar. También se incluye el desarrollo del hardware del conjunto microcontrolador, sensor, batería y módulo inalámbrico (nodos). 
+El proyecto incluye el desarrollo del firmware para la comunicación de los nodos con la central, prueba de prototipo  funcional y su puesta en funcionamiento en una pequeña  planta  dentro de las instalaciones del  taller o en  planta modelo  montada por colaborador  para pruebas, que simule el  invernadero a controlar. También se incluye el desarrollo del hardware del conjunto microcontrolador, sensor, batería y módulo inalámbrico (nodos). 
 
 El proyecto no incluye la puesta en funcionamiento en campo y posterior mantenimiento .
 
@@ -191,7 +194,7 @@ El proyecto no incluye la puesta en funcionamiento en campo y posterior mantenim
 
 \begin{itemize}
 \item El cliente proveerá los fondos para la compra de sensores,  actuadores y materiales varios para desarrollar la red de sensores.
-\item El cliente deberá proveer un equipo funcionando con la cual la rede deberá comunicarse, reemplazando los actuales sensores cableados.
+\item El cliente deberá proveer un equipo funcionando con el cual la red de sensores deberá comunicarse.
 \item El cliente proveerá un entorno o invernadero/indoor piloto de prueba.
 \end{itemize}
 
@@ -201,12 +204,12 @@ El proyecto no incluye la puesta en funcionamiento en campo y posterior mantenim
 \label{sec:requerimientos}
 
 \begin{consigna}{black}
-Los requerimientos surgen del análisis realizado a la propuesta y relevamiento de proyecto que envía el cliente. Se detallan a continuación, agrupados por afinidad e indicando en cada uno su prioridad, siendo [0] la más alta y [3] la más baja.
+Los requerimientos surgen del análisis realizado a la propuesta y relevamiento de proyecto que envía el cliente. Se detallan a continuación, agrupados por afinidad y se indica en cada uno su prioridad, siendo [0] la más alta y [3] la más baja.
 
 \begin{enumerate}
 \item Grupo de requerimientos asociados con comunicación
 	\begin{enumerate}
-	\item Cada nodo deberá enviar la información tomada del sensor a la central [0].
+	\item Cada nodo deberá enviar la información tomada del sensor a la central. El período de muestreo deberá ser configurable desde la central. Cada mensaje hacia la central tendrá un máximo de 10 bytes [0].
 	\item Se deberá desarrollar un protocolo de comunicación entre la central y los nodos [0].
 	\item Los nodos tendrán un sistema de reintento de envío de información a la central en caso de falla en la misma [2].
 	\item Los nodos almacenarán en memoria interna información no enviada hasta que la misma se envíe en un reintento[3].
@@ -214,13 +217,19 @@ Los requerimientos surgen del análisis realizado a la propuesta y relevamiento 
 	\end{enumerate}
 \item Grupo de requerimientos asociados con alimentación
 	\begin{enumerate}
-	\item Los nodos estarán alimentados por batería como fuente eléctrica [0].
+	\item Los nodos estarán alimentados por batería como fuente eléctrica, el rango de tensión admisible será de 1.9v a 3.3v. La tensión nominal será de 3.3v. La batería deberá durar 30 días como mínimo [0].
 	\item Se deberá desarrollar una función de ahorro de batería en los nodos [1].
 	\end{enumerate}
-\item Grupo de requerimientos asociados con disposición
+\item Grupo de requerimientos asociados con generalidades del proyecto
 	\begin{enumerate}
-	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería [0].
+	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería. El sistema tendrá un máximo de 4 sensores y la distancia máxima a la central será de 15 metros [0].
 	\item El sistema debe permitir instalarse en cualquier invernadero o indoor [2].
+	\end{enumerate}
+\item Grupo de requerimientos asociados con documentación y codificación
+	\begin{enumerate}
+	\item Se deberá entregar un manual de instalación y manual de uso [3].
+	\item Se deberá usar Git como software de control de versiones [2].
+	\item Se deberá documentar el código con doxygen [3].
 	\end{enumerate}
 
 
@@ -236,9 +245,9 @@ Los requerimientos surgen del análisis realizado a la propuesta y relevamiento 
 Se enumeran las historias de usuario y su ponderación calculada en story points (del [1] al [5]).
 
 \begin{enumerate}
-\item Como cliente del proyecto quiero poder visualizar la información obtenida de los sensores en tiempo real [2].
+\item Como usuario final del proyecto quiero poder visualizar la información obtenida de los sensores en tiempo real [2].
 
-\item Como usuario del producto quiero instalarlo de manera práctica, flexible y sin conocimiento técnico [1].
+\item Como usuario final del producto quiero instalarlo de manera práctica, flexible y sin conocimiento técnico [1].
 
 \item Como cliente del proyecto quiero eliminar el cableado del producto final [5].
 
@@ -262,7 +271,6 @@ Los entregables del proyecto son:
 \item Prototipo funcional
 \item Manual de instalación
 \item Memoria técnica
-\item Lecciones aprendidas
 
 \end{itemize}
 
@@ -311,7 +319,7 @@ El proyecto se divide en las siguientes tareas:
 	\end{enumerate}
 \item \textbf{Implementación e integración: 50 hs}
 	\begin{enumerate}
-	\item Integración de los componentes con un producto final reemplazando sensores cableados (20 hs)
+	\item Integración de los componentes con un producto final (20 hs)
 	\item Implementación del prototipo en una planta real (indoor o invernadero) (30 hs)
 	\end{enumerate}
 \item \textbf{Presentación del trabajo: 90 hs}
