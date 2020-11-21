@@ -34,7 +34,7 @@
  
 \fechaINICIO{25 de agosto de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlanificacion{13 de octubre de 2020} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{22 de agosto de 2021}		%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{23 de agosto de 2021}		%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -68,6 +68,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 06/11/2020 \\ \hline
 1.3      & Correciones de la primer entrega e historias de usuarios
 & 06/11/2020 \\ \hline
+1.4      & Tercer entrega y correcciones detectadas
+& 21/11/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -324,8 +326,7 @@ El proyecto se divide en las siguientes tareas:
 	\end{enumerate}
 \item \textbf{Presentación del trabajo: 90 hs}
 	\begin{enumerate}
-	\item Confección de la memoria (60 hs)
-	\item Lecciones aprendidas (10 hs)
+	\item Confección de la memoria (70 hs)
 	\item Preparación de la presentación final (20 hs)
 	\end{enumerate}
 \end{enumerate}
@@ -338,8 +339,18 @@ El proyecto se divide en las siguientes tareas:
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
+\begin{consigna}{black}
+
+En la Figura \ref{fig:aon} se detalla el diagrama de Activity On Node asociado a las tareas del proyecto. Los colores representan las agrupaciones que se realizaron en el desglose del trabajo en tareas, estas son:
+
+\begin{enumerate}
+	\item Gestión del proyecto (celeste)
+	\item Hardware (lila)
+	\item Firmware (colorado)
+	\item Testing y verificación (amarillo)
+	\item Implementación e integración (verde)
+	\item Presentación del trabajo (gris)
+\end{enumerate}
 
 %La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
@@ -349,14 +360,10 @@ Armar el AoN a partir del WBS definido en la etapa anterior.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=.9\textwidth]{./Figuras/aon.png}
 \caption{Diagrama en \textit{Activity on Node}}
-\label{fig:AoN}
+\label{fig:aon}
 \end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
 
 
 
