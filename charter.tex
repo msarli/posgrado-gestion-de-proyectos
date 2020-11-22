@@ -1,5 +1,7 @@
 \documentclass[11pt]{charter}
 
+\usepackage{makecell}
+
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
 \titulo{Red de sensores inalámbricos en invernaderos e indoors automatizados} 
 
@@ -70,6 +72,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 06/11/2020 \\ \hline
 1.4      & Tercer entrega y correcciones detectadas
 & 21/11/2020 \\ \hline
+1.5      & Tercer entrega últimos puntos y corrección presupuesto
+& 22/11/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -86,7 +90,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá en el desarrollo de un sistema de control inalámbrico y de bajo costo para invernaderos y/o indoors domésticos, y tendrá un presupuesto preliminar estimado de 603 hs de trabajo y {\$5.345}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá en el desarrollo de un sistema de control inalámbrico y de bajo costo para invernaderos y/o indoors domésticos, y tendrá un presupuesto preliminar estimado de 603 hs de trabajo y {\$6.602}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -422,58 +426,83 @@ En la Figura \ref{fig:wbs} se detalla la tabla asociada al diagrama de Gantt. En
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
 
+Para la ejecución del proyecto se precisan los siguientes materiales:
+
+\begin{enumerate}
+	\item Microcontrolador Blue Pill Stm32f103c8t6 (x4 unidades)
+	\item Módulo Transceptor Rf Nrf24l01 2.4ghz Arduino Pic Avr (x4 unidades)
+	\item Sensor De Humedad Y Temperatura Htu2 (x3 unidades)
+	\item PC (x1 unidad)
+	\item Planta real (indoor o invernadero)
+	\item Producto actual cableado
+	\item Pila D (x6 unidades)
+\end{enumerate}
+
+
 
 \begin{table}
 \label{tab:recursos}
 \centering
-\begin{tabularx}{\linewidth}{@{}|c|X|X|X|X|c|@{}}
+\begin{tabularx}{\linewidth}{@{}|X|c|X|X|X|X|X|X|X|@{}}
 \hline
-\cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Material 1 & Material 2 & Material 3 & Material 4 \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline 
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline 
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+\cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{7}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-9} 
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & 1.Micro & 2.NRF & 3.Sensor & 4.PC & 5.Planta & 6.Prod & 7.Pila \\ \hline
+
+1.1 & \makecell{Planificación \\ del proyecto}  &  &  &  & 20 & & &\\ \hline
+1.2 & \makecell{Confección informe \\ de avance} &  &  &  & 8 & & &  \\ \hline
+1.3 & \makecell{Análisis y relevamiento \\ inicial} &  &  &  & 15 & & & \\ \hline
+1.4 & \makecell{Confección manual \\ de instalación} &  &  &  & 8 & & 2 & \\ \hline
+1.5 & \makecell{Confección manual \\ de uso} &  &  &  & 13 & & 2 & \\ \hline
+2.1 & \makecell{Definición de \\ componentes} &  &  &  &  7 & & & \\ \hline
+2.2 & \makecell{Compra de \\componentes} &  &  &  & 5 & & & \\ \hline
+2.3 & \makecell{Diseño de prototipos \\ de los nodos} &  &  &  & 10 & & & \\ \hline 
+2.4 & \makecell{Elaboración/construcción \\ de los nodos} & 20 & 20 & 15 &  & & &\\ \hline
+3.1 & Diseño de la solución &  &  &  & 28 & &  &\\ \hline
+3.2 & \makecell{Configuración de  \\ herramientas y  \\ plataforma de\\ desarrollo}  & 10 &  &  & 21 & & &\\ \hline
+
+3.3 & \makecell{Estudio y aprendizaje \\ para el desarrollo  \\ de los componentes} & 20 &  &  & 20 & &  &\\ \hline
+3.4 & \makecell{Desarrollo del \\ protocolo de \\ comunicación y su\\ encriptación} & 40 & 40 &  & 40 & &  &\\ \hline
+3.5 & \makecell{Desarrollo de la \\ función ahorro de \\ batería} & 33 &  33 &  & 33 & & & 30 \\ \hline
+3.6 & \makecell{Desarrollo de \\configuración inicial\\ de nuevo nodo \\ en la red} & 35 & 35 &  & 35 & &  & \\ \hline
+3.7 & \makecell{Desarrollo de los \\ componentes de \\  medición y \\ almacenamiento} & 32 & 32 & 32 & 32 & & & \\ \hline
 
 \end{tabularx}%
 \end{table}
 
 
+\begin{table}
+\label{tab:recursos}
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|X|X|X|X|X|X|X|@{}}
+\hline
+\cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{7}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-9} 
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & 1.Micro & 2.NRF & 3.Sensor & 4.PC & 5.Planta & 6.Prod & 7.Pila \\ \hline
+
+
+3.8 & \makecell{Desarrollo del \\ módulo de reenvío} & 29 & 29 &  & 29 & & & \\ \hline
+4.1 & \makecell{Testing unitario \\del protocolo de \\comunicación} & 20 & 20 &  & 20 & & & \\ \hline
+
+4.2 & \makecell{Testing unitario de \\ la función de ahorro\\ de batería} & 15 & 15 &  & 15 & & & 15 \\ \hline
+4.3 & \makecell{Testing unitario de \\ nuevo nodo en red} & 18 & 18 &  & 18 & & & \\ \hline
+4.4 & \makecell{Testing unitario de \\la medición, \\almacenamiento y\\ reenvío} & 25 & 25 & 25 & 25 & & & \\ \hline
+4.5 & \makecell{Testing de integración} & 37 & 37 & 37 & 37 & & & 37 \\ \hline
+5.1 & \makecell{Integración de los \\componentes con un \\producto final} & 20 & 20 & 20 & 20 &  & 20 & 20 \\ \hline
+5.2 & \makecell{Implementación del \\prototipo en una \\planta real \\ (indoor o invernadero)} & 30 & 30 & 30 & 30 & 30 & 30 & 30\\ \hline 
+6.1 & \makecell{Confección de la memoria}  &  &  &  & 70 & & & \\ \hline
+6.2 & \makecell{Preparación de \\la presentación final} &  &  &  & 20 & & & \\ \hline
+Total & & 384 & 354 & 159 & 579 & 30 & 54 & 132 \\ \hline
+\end{tabularx}%
+\end{table}
+
+
+
+
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
+\begin{consigna}{black}
 
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+Para la elaboración del presupuesto, se tomará un valor de los componentes a la fecha 29/10/2020 en moneda pesos Argentinos. No se considera valor de hora de desarrollo ya que se acordó con el cliente, el pago únicamente de los componentes. Se considera un porcentaje del \% 20 de los costos directos para costos indirectos.
 
 \end{consigna}
 
@@ -488,56 +517,58 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  
+  Microcontrolador Blue Pill Stm32f103c8t6 &  
+  \multicolumn{1}{c|}{4} & 
+  \multicolumn{1}{c|}{562} &
+  \multicolumn{1}{c|}{2.248} \\ \hline
+  
+  Módulo Transceptor Rf Nrf24l01 2.4ghz Arduino Pic Avr &
+  \multicolumn{1}{c|}{4} &
+  \multicolumn{1}{c|}{250} &
+  \multicolumn{1}{c|}{1.000} \\ \hline
+  
+  
+  Sensor De Humedad Y Temperatura Htu2 &
+  \multicolumn{1}{c|}{3} &
+  \multicolumn{1}{c|}{699} &
+  \multicolumn{1}{c|}{2.097} \\ \hline
+   
+  Pila Alcalina Duracell D Grande &
+  \multicolumn{1}{c|}{6} &
+  \multicolumn{1}{c|}{209,5} &
+  \multicolumn{1}{c|}{1.257} \\ \hline
+  
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{6.602} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
-Descripción &
+Descripción & 
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
+  
+  
+\multicolumn{1}{|l|}{\% 20 costos directos} & 1.320,4
    &
+   1
    &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+   1.320,4
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{1.320,4} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & 7.922,4
    \\ \hline
+   
 \end{tabularx}%
 \end{table}
 
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
-\begin{consigna}{red}
-Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
+\begin{consigna}{black}
 
 \begin{table}[htpb]
 \centering
@@ -553,21 +584,81 @@ Establecer la matriz de asignación de responsabilidades y el manejo de la autor
   \cellcolor[HTML]{C0C0C0} &
   Responsable &
   Orientador &
-  Equipo &
+  Colaborador &
   Cliente \\ \cline{3-6} 
 \rowcolor[HTML]{C0C0C0} 
 \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
   \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
   \authorname &
   \supname &
-  Nombre de alguien &
+  Raúl Palavecino &
   \clientename \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+  
+  
+
+1.1 & \makecell{Planificación \\ del proyecto}  & P  & I &  & I \\ \hline
+1.2 & \makecell{Confección informe \\ de avance} & P & C &  & I \\ \hline
+1.3 & \makecell{Análisis y relevamiento \\ inicial} & P &  &  & C \\ \hline
+1.4 & \makecell{Confección manual \\ de instalación} & P &  &  & C/A \\ \hline
+1.5 & \makecell{Confección manual \\ de uso} & P &  &  & C/A \\ \hline
+2.1 & \makecell{Definición de \\ componentes} & S &  &  & P\\ \hline
+2.2 & \makecell{Compra de \\componentes} & I &  &  & P \\ \hline
+2.3 & \makecell{Diseño de prototipos \\ de los nodos} & P &  & C & I\\ \hline 
+2.4 & \makecell{Elaboración/construcción \\ de los nodos} & P &  &  & \\ \hline
+3.1 & Diseño de la solución & P & C & C & A\\ \hline
+3.2 & \makecell{Configuración de  \\ herramientas y  \\ plataforma de\\ desarrollo}  & P &  & C & \\ \hline
+
+3.3 & \makecell{Estudio y aprendizaje \\ para el desarrollo  \\ de los componentes} & P &  & C & \\ \hline
+3.4 & \makecell{Desarrollo del \\ protocolo de \\ comunicación y su\\ encriptación} & P & C & C & \\ \hline
+3.5 & \makecell{Desarrollo de la \\ función ahorro de \\ batería} & P & C  & C & \\ \hline
+3.6 & \makecell{Desarrollo de \\configuración inicial\\ de nuevo nodo \\ en la red} & P & C & C & \\ \hline
+3.7 & \makecell{Desarrollo de los \\ componentes de \\  medición y \\ almacenamiento} & P & C & C & \\ \hline
+
 \end{tabular}%
 }
 \end{table}
+
+
+\begin{table}[htpb]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
+\rowcolor[HTML]{C0C0C0} 
+\cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  Responsable &
+  Orientador &
+  Colaborador &
+  Cliente \\ \cline{3-6} 
+\rowcolor[HTML]{C0C0C0} 
+\multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
+  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
+  \authorname &
+  \supname &
+  Raúl Palavecino &
+  \clientename \\ \hline
+  
+3.8 & \makecell{Desarrollo del \\ módulo de reenvío} & P & C & C &\\ \hline
+4.1 & \makecell{Testing unitario \\del protocolo de \\comunicación} & P &  &  & \\ \hline
+
+4.2 & \makecell{Testing unitario de \\ la función de ahorro\\ de batería} & P &  &  & \\ \hline
+4.3 & \makecell{Testing unitario de \\ nuevo nodo en red} & P &  &  & \\ \hline
+4.4 & \makecell{Testing unitario de \\la medición, \\almacenamiento y\\ reenvío} & P & &  & \\ \hline
+4.5 & \makecell{Testing de integración} & P &  &  & \\ \hline
+5.1 & \makecell{Integración de los \\componentes con un \\producto final} & P &  &  & S\\ \hline
+5.2 & \makecell{Implementación del \\prototipo en una \\planta real \\ (indoor o invernadero)} & P &  &  & S\\ \hline 
+6.1 & \makecell{Confección de la memoria}  & P & A &  & I \\ \hline
+6.2 & \makecell{Preparación de \\la presentación final} & P  & A &  & I\\ \hline
+
+\end{tabular}%
+}
+\end{table}
+
 
 {\footnotesize
 Referencias:
@@ -580,10 +671,6 @@ Referencias:
 \end{itemize}
 } %footnotesize
 
-Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
-A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
-
-Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
 
 \end{consigna}
 
