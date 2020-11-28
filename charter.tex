@@ -74,6 +74,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 21/11/2020 \\ \hline
 1.5      & Tercer entrega últimos puntos y corrección presupuesto
 & 22/11/2020 \\ \hline
+1.6      & Cuarta entrega
+& 28/11/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -165,9 +167,9 @@ Usuario final & Productores e \newline independientes \newline pequeña/mediana 
 
 
 \begin{itemize}
-\item Cliente Pablo Lodeti: CEO de Wentux. Desarrolló el actual producto que tiene la empresa .
-\item Colaborador Raúl Palavecino: Estudiante de la carrera ingeniería en electrónica y persona con experiencia en embebidos. 
-\item Orientador Gonzalo Sanchez: Magister en sistema embebidos con experiencia en el microcontrolador a utilizar.
+\item Cliente Pablo Lodeti: CEO de Wentux. Desarrolló el actual producto que tiene la empresa.
+\item Colaborador Raúl Palavecino: estudiante de la carrera ingeniería en electrónica y persona con experiencia en embebidos. 
+\item Orientador Gonzalo Sanchez: magister en sistema embebidos con experiencia en el microcontrolador a utilizar.
 \end{itemize}
 
 \end{consigna}
@@ -217,18 +219,18 @@ Los requerimientos surgen del análisis realizado a la propuesta y relevamiento 
 	\begin{enumerate}
 	\item Cada nodo deberá enviar la información tomada del sensor a la central. El período de muestreo deberá ser configurable desde la central. Cada mensaje hacia la central tendrá un máximo de 10 bytes [0].
 	\item Se deberá desarrollar un protocolo de comunicación entre la central y los nodos [0].
-	\item Los nodos tendrán un sistema de reintento de envío de información a la central en caso de falla en la misma [2].
-	\item Los nodos almacenarán en memoria interna información no enviada hasta que la misma se envíe en un reintento[3].
+	\item Los nodos tendrán un sistema de reintento de envío de información a la central en caso de falla [2].
+	\item Los nodos almacenarán en memoria interna información no enviada hasta que se envíe en un reintento [3].
 	\item La comunicación deberá estar protegida mediante un algoritmo de encriptación para que no sea alterada externamente [3].
 	\end{enumerate}
 \item Grupo de requerimientos asociados con alimentación
 	\begin{enumerate}
-	\item Los nodos estarán alimentados por batería como fuente eléctrica, el rango de tensión admisible será de 1.9v a 3.3v. La tensión nominal será de 3.3v. La batería deberá durar 30 días como mínimo [0].
+	\item Los nodos estarán alimentados por batería como fuente eléctrica, el rango de tensión admisible será de 1,9 v a 3,3 v. La tensión nominal será de 3,3 v. La batería deberá durar 30 días como mínimo [0].
 	\item Se deberá desarrollar una función de ahorro de batería en los nodos [1].
 	\end{enumerate}
 \item Grupo de requerimientos asociados con generalidades del proyecto
 	\begin{enumerate}
-	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería. El sistema tendrá un máximo de 4 sensores y la distancia máxima a la central será de 15 metros [0].
+	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería. El sistema tendrá un máximo de cuatro sensores y la distancia máxima a la central será de 15 metros [0].
 	\item El sistema debe permitir instalarse en cualquier invernadero o indoor [2].
 	\end{enumerate}
 \item Grupo de requerimientos asociados con documentación y codificación
@@ -251,13 +253,17 @@ Los requerimientos surgen del análisis realizado a la propuesta y relevamiento 
 Se enumeran las historias de usuario y su ponderación calculada en story points (del [1] al [5]).
 
 \begin{enumerate}
-\item Como usuario final del proyecto quiero poder visualizar la información obtenida de los sensores en tiempo real [2].
+\item Como productor de invernadero del producto quiero poder visualizar la información obtenida de los sensores en tiempo real para tener un mejor control de las variables controladas [2].
 
-\item Como usuario final del producto quiero instalarlo de manera práctica, flexible y sin conocimiento técnico [1].
+\item Como productor de invernadero del producto quiero configurar los tiempos de sensado de cada nodo para darle un tratado diferencial a cada plantación de mis cultivos [2].
 
-\item Como cliente del proyecto quiero eliminar el cableado del producto final [5].
+\item Como productor doméstico del producto quiero instalarlo de manera práctica, flexible y sin conocimiento técnico para no tener que involucrarme en cuestiones técnicas del producto [1].
 
-\item Como cliente del proyecto quiero despreocuparme de la duración de las baterías [4].
+\item Como cliente del proyecto quiero eliminar el cableado del producto final para ofrecer un producto con mayor estética visual y practicidad en su uso [5].
+
+\item Como cliente del proyecto quiero despreocuparme de la duración de las baterías para que el producto requiera mínimo control de funcionamiento [4].
+
+\item Como cliente del proyecto quiero utilizar un microcontrolador STM 32 para abaratar los costos del producto [4].
 
 \end{enumerate}
 
@@ -677,63 +683,83 @@ Referencias:
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos)
+\begin{consigna}{black}
+a) Criterio adoptado:
+Severidad (S): mientras más severo, más alto es el número (rango del 1 al 10).
+Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (rango del 1 al 10).
+
+Riesgo 1: Cancelación del proyecto por parte de la empresa Wentux
 \begin{itemize}
-\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de severidad (S).
-\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de (O). 
+\item Severidad (10): Conlleva a la no aprobación de la especialización.
+\item Probabilidad de ocurrencia (2): No es un producto nuevo que puede cancelarse su inversión. La empresa se dedica a la producción de este tipo de productos y el proyecto es una mejora fundamental para ellos.
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: No cumplir con la fecha pactada
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
-\end{itemize}
+\item Severidad (10): Conlleva a la no aprobación de la especialización.
+\item Probabilidad de ocurrencia (7): El proyecto implica muchas horas para su realización y la disponibilidad del responsable \authorname {} es limitada.
+\end{itemize}   
 
-Riesgo 3:
+Riesgo 3: No cumplir con los requerimientos pactados con el cliente
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
-\end{itemize}
+\item Severidad (8): Conlleva a la entrega de un producto que no funciona como se esperaba o que tiene funcionalidades limitadas a las esperadas.
+\item Probabilidad de ocurrencia (7): Dada la poca experiencia del responsable \authorname {} en desarrollos de esta índole, se podría llegar a una implementación pobre de los requerimientos.
+\end{itemize}   
 
+Riesgo 4: Mala elección en los componentes a utilizar
+\begin{itemize}
+\item Severidad (5): Puede conllevar a modificar el alcance del proyecto y/o el hardware a utilizar.
+\item Probabilidad de ocurrencia (3): El cliente \clientename {} tiene experiencia en el desarrollo utilizando los componentes impuestos. 
+\end{itemize}   
+
+Riesgo 5: No conseguir a tiempo los componentes a utilizar
+\begin{itemize}
+\item Severidad (7): Puede conllevar a modificar el alcance del proyecto y/o el hardware a utilizar.
+\item Probabilidad de ocurrencia (5): El cliente \clientename {} ya cuenta con la mayoría de ellos pero algunos no se consiguen fácilmente en caso de ser necesarios en mayor cantidad o para reposición. 
+\end{itemize}   
 
 b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 
 \begin{table}[htpb]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|X|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+   1    & 10  & 2  &  20   &    &    &      \\ \hline
+   2    & 10  & 7  &  70   & 10   & 4   & 40     \\ \hline
+   3    & 8  & 7  &   56  & 8   & 4   & 32     \\ \hline
+   4    & 5 & 3  &   15  &    &    &      \\ \hline
+   5    & 7 &  5 &   35  &    &    &      \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 50
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 2: No cumplir con la fecha pactada
+\begin{itemize}
+\item 
+Plan de mitigación: Mayor organización y seguimiento en el avance del proyecto por parte del responsable \authorname .{} Utilización de días de estudio para asignar más horas en el proyecto durante la jornada laboral.
+\item 
+Severidad (10): En caso de no cumplirse, la severidad sigue siendo la misma que implica la no aprobación de la especialización.
+\item 
+Probabilidad de ocurrencia (4): Con el plan de mitigación propuesto, el responsable \authorname {} cuenta con 20 días anuales de días de estudio que suman 140 hs adicionales a las calculadas de disponibilidad inicial.
+\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 3: No cumplir con los requerimientos pactados con el cliente
+\begin{itemize}
+\item 
+Plan de mitigación: Se iniciará con las tareas que impliquen capacitación y primeras pruebas con el uso de los componentes durante el receso posterior al primer bimestre, tratando de avanzar prematuramente con el proyecto.
+\item 
+Severidad (8): En caso de no cumplirse, la severidad sigue siendo la misma que implica la entrega de un producto que no funciona como se esperaba o que tiene funcionalidades limitadas a las esperadas.
+\item 
+Probabilidad de ocurrencia (4): Con el plan de mitigación propuesto, el responsable \authorname {} tiene la posibilidad de acelerar el calendario establecido en el diagrama de Gantt, sumará con esta alternativa mayor cantidad de horas por día durante el receso posterior al primer bimestre.
+\end{itemize}
 
 \end{consigna}
 
@@ -741,21 +767,74 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 \section{13. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\begin{consigna}{black}
+Para cada uno de los requerimientos del proyecto se indicará la verificación y validación a llevarse a cabo:
 
-Verificación y validación:
+\begin{enumerate}
+\item Grupo de requerimientos asociados con comunicación
+	\begin{enumerate}
+	\item Cada nodo deberá enviar la información tomada del sensor a la central. El período de muestreo deberá ser configurable desde la central. Cada mensaje hacia la central tendrá un máximo de 10 bytes [0].
+	\\ - \textbf{Verificación}: Lectura de logs en la central a modo de corroborar que la información se envió exitosamente en el período de muestreo configurado.
+	\\ - \textbf{Validación}: Constatar que el sistema realiza las mediciones establecidas y se visualizan en tiempo real desde la central.
+		
+	\item Se deberá desarrollar un protocolo de comunicación entre la central y los nodos [0].
+	\\ - \textbf{Verificación}: Lectura de logs en la central a modo de corroborar que la información enviada es interpretada correctamente.
+	\\ - \textbf{Validación}: Constatar que el sistema realiza las mediciones establecidas y se visualizan en tiempo real desde la central.
+	
+	\item Los nodos tendrán un sistema de reintento de envío de información a la central en caso de falla en la misma [2].
+	\\ - \textbf{Verificación}: Lectura de logs en el nodo a modo de corroborar que se realizó un reintento de envío hacia la central.
+	\\ - \textbf{Validación}: Constatar que los nodos realizan reintentos de envío de información seguidos del período configurado ante la baja intencional momentánea de la central.
+	
+	\item Los nodos almacenarán en memoria interna información no enviada hasta que la misma se envíe en un reintento[3].
+	\\ - \textbf{Verificación}: Lectura de logs en el nodo a modo de corroborar que almacenan la información.
+	\\ - \textbf{Validación}: Constatar que los nodos realizan reintentos de envío de información seguidos del período configurado ante la baja intencional momentánea de la central, con la información almacenada en memoria interna.
+	
+	\item La comunicación deberá estar protegida mediante un algoritmo de encriptación para que no sea alterada externamente [3].
+	\\ - \textbf{Verificación}: Lectura de logs en la central a modo de corroborar que la información que recibe está encriptada.
+	\\ - \textbf{Validación}: Constatar que la central recibe información no legible sin una llave para desencriptarla.
+	
+	\end{enumerate}
+\item Grupo de requerimientos asociados con alimentación
+	\begin{enumerate}
+	\item Los nodos estarán alimentados por batería como fuente eléctrica, el rango de tensión admisible será de 1.9v a 3.3v. La tensión nominal será de 3.3v. La batería deberá durar 30 días como mínimo [0].
+	\\ - \textbf{Verificación}: Observar la alimentación de los nodos del sistema.
+	\\ - \textbf{Validación}: Constatar que los nodos tienen una batería y que la duración de la misma en los nodos, pasados los 30 días, sigue operativa.
+	
+	\item Se deberá desarrollar una función de ahorro de batería en los nodos [1].
+	\\ - \textbf{Verificación}: Lectura de logs en los nodos que activarán las funcionalidad cuando la central lo solicite.
+	\\ - \textbf{Validación}: Constatar que los nodos aplican la funcionalidad de ahorro de batería y se extiende la duración de la misma.
+	
+	\end{enumerate}
+\item Grupo de requerimientos asociados con generalidades del proyecto
+	\begin{enumerate}
+	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería. El sistema tendrá un máximo de 4 sensores y la distancia máxima a la central será de 15 metros [0].
+	\\ - \textbf{Verificación}: Observación de los nodos y su cantidad.
+	\\ - \textbf{Validación}: Constatar la máxima cantidad de nodos y la composición de los mismos con su observación.
+	
+	\item El sistema debe permitir instalarse en cualquier invernadero o indoor [2].
+	\\ - \textbf{Verificación}: Pruebas en distintos invernaderos o indoors.
+	\\ - \textbf{Validación}: Constatar la instalación del sistema en distintos invernaderos o indoors.
+	
+	\end{enumerate}
+\item Grupo de requerimientos asociados con documentación y codificación
+	\begin{enumerate}
+	\item Se deberá entregar un manual de instalación y manual de uso [3].
+	\\ - \textbf{Verificación}: Corroborar la entregar de ambos manuales de forma digital.
+	\\ - \textbf{Validación}: Constatar recepción de ambos manuales.
+	
+	\item Se deberá usar Git como software de control de versiones [2].
+	\\ - \textbf{Verificación}: Corroborar repositorio.
+	\\ - \textbf{Validación}: Constatar la utilización de un repositorio con un enlace al mismo.
+	
+	\item Se deberá documentar el código con doxygen [3].
+	\\ - \textbf{Verificación}: Corroborar utilización de doxygen en el código fuente del desarrollo.
+	\\ - \textbf{Validación}: Constatar la utilización de doxygen en el repositorio y/o con la documentación generada por la herramienta.
+	
+	
+	\end{enumerate}
 
-\begin{itemize}
-\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
 
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.
+\end{enumerate}
 
 \end{consigna}
 
@@ -772,72 +851,84 @@ El plan de comunicación del proyecto es el siguiente:
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}PLAN DE COMUNICACIÓN DEL PROYECTO}           \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 ¿Qué comunicar? & Audiencia & Propósito & Frecuencia & Método de comunicac. & Responsable \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
+   Alcance de un hito             &   Cliente        &   Toma de conocimiento        &   Cuando ocurra         &    e-mail                  &    \authorname         \\ \hline
+   Desvíos             &    Cliente       &  Búsqueda de soluciones         &   Cuando ocurra         &    e-mail                  &     \authorname        \\ \hline
+   Finalización             &  Cliente         &   Toma de conocimiento        &  Al finalizar el proyecto          &    e-mail                  &            \authorname \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{15. Gestión de compras}
 \label{sec:compras}
 
-\begin{consigna}{red}
-En caso de tener que comprar elementos o contratar servicios:
-a) Explique con qué criterios elegiría a un proveedor.
-b) Redacte el Statement of Work correspondiente.
+\begin{consigna}{black}
+No se contemplan compras ni contrataciones. Los elementos los proveerá Wentux.
 \end{consigna}
 
 \section{16. Seguimiento y control}
 \label{sec:seguimiento}
 
-\begin{consigna}{red}
-Para cada tarea del proyecto establecer la frecuencia y los indicadores con los se seguirá su avance y quién será el responsable de hacer dicho seguimiento y a quién debe comunicarse la situación (en concordancia con el Plan de Comunicación del proyecto).
+\begin{consigna}{black}
 
-El indicador de avance tiene que ser algo medible, mejor incluso si se puede medir en \% de avance. Por ejemplo,se pueden indicar en esta columna cosas como ``cantidad de conexiones ruteadeas'' o ``cantidad de funciones implementadas'', pero no algo genérico y ambiguo como ``\%'', porque el lector no sabe porcentaje de qué cosa.
 
 \end{consigna}
 
-\begin{longtable}{|m{1cm}|m{3.5cm}|m{2.2cm}|m{2cm}|m{3cm}|m{1.5cm}|}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Tarea del WBS 			& Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
-\endfirsthead
-
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{6}{c}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Tarea del WBS 			& Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
-\endhead
-
-\multicolumn{6}{c}{Continúa}
-\endfoot
-
-\endlastfoot
-
-1.1	& Fecha de inicio  & Única vez al comienzo & \authorname & \clientename, \supname & email \\ \hline
-2.1	& Avance de las subtareas  & Mensual mientras dure la tarea & \authorname & \clientename, \supname & email \\ \hline
-
-\end{longtable}
 
 \begin{table}[!htpb]
 \centering
 %\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
-\begin{tabularx}{\linewidth}{@{}|X|C{2.5cm}|C{3cm}|C{2cm}|C{2cm}|C{2.5cm}|@{}}
+\begin{tabularx}{\linewidth}{@{}|C{0.5cm}|X|C{2cm}|C{2cm}|X|C{2.5cm}|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+1.1 & Entrega del plan & Única vez & \authorname & Director y autoridades MSE  & e-mail \\ \hline
+1.2 & Entrega del informe & Única vez & \authorname & Director y autoridades MSE & e-mail \\ \hline
+1.3 & Entrega del plan & Única vez & \authorname & Director y autoridades MSE & e-mail \\ \hline
+1.4 & Entrega del manual & Única vez & \authorname & Cliente & e-mail \\ \hline
+1.5 & Entrega del manual & Única vez & \authorname & Cliente & e-mail \\ \hline
+
+2.1 & Acuerdo con cliente & Única vez & \authorname & Cliente & e-mail  \\ \hline
+2.2 & Compra realizada & Única vez & \authorname & Cliente & e-mail \\ \hline
+2.3 & Acuerdo con cliente & Única vez & \authorname & Cliente & e-mail \\ \hline
+2.4 & Porcentaje de ensamble & Semanal & \authorname & Director y cliente & e-mail \\ \hline
+
+3.1 & \makecell{Porcentaje de \\ diseño definido} & Semanal & \authorname & Director y cliente & e-mail \\ \hline
+3.2 & \makecell{Porcentaje de \\ herramientas probadas} & Semanal & \authorname & - & No aplica \\ \hline
+3.3 & \makecell{Porcentaje de \\ pruebas por \\ componente} & Semanal & \authorname & - & No aplica \\ \hline
+3.4 & \makecell{Porcentaje de \\ funcionalidad \\ realizada} & Quincenal & \authorname & Cliente & e-mail \\ \hline
+
+\end{tabularx}%
+%}
+\end{table}
+
+
+\begin{table}[!htpb]
+\centering
+%\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
+\begin{tabularx}{\linewidth}{@{}|C{0.5cm}|X|C{2cm}|C{2cm}|X|C{2.5cm}|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
+
+3.5 & \makecell{Porcentaje de \\ funcionalidad \\ realizada} & Quincenal & \authorname & Cliente & e-mail \\ \hline
+3.6 & \makecell{Porcentaje de \\ funcionalidad \\ realizada} & Quincenal & \authorname & Cliente & e-mail \\ \hline
+3.7 & \makecell{Porcentaje de \\ funcionalidad \\ realizada} & Quincenal & \authorname & Cliente & e-mail \\ \hline
+3.8 & \makecell{Porcentaje de \\ funcionalidad \\ realizada} & Quincenal & \authorname & Cliente & e-mail \\ \hline
+
+4.1 & \makecell{Porcentaje de \\ funcionalidades \\ verificadas} & Semanal & \authorname & Cliente & e-mail \\ \hline
+4.2 & \makecell{Porcentaje de \\ funcionalidades \\ verificadas} & Semanal & \authorname & Cliente & e-mail \\ \hline
+4.3 & \makecell{Porcentaje de \\ funcionalidades \\ verificadas} & Semanal & \authorname & Cliente & e-mail \\ \hline
+4.4 & \makecell{Porcentaje de \\ funcionalidades \\ verificadas} & Semanal & \authorname & Cliente & e-mail \\ \hline
+4.5 & \makecell{Porcentaje de \\ funcionalidades \\ verificadas} & Semanal & \authorname & Cliente & e-mail \\ \hline
+
+5.1 & \makecell{Porcentaje de \\ funcionalidades \\ integradas} & Semanal & \authorname & Cliente & Reunión presencial \\ \hline
+5.2 & \makecell{Porcentaje de \\ funcionalidades \\ probadas} & Semanal & \authorname & Cliente & Reunión presencial \\ \hline
+
+6.1 & Memoria realizada & Única vez & \authorname & Director, autoridades MSE y cliente & e-mail \\ \hline
+6.2 & \makecell{Video, diapositiva \\ y documentos \\ entregados} & Única vez & \authorname & Director, autoridades MSE y cliente & Reunión presencial \\ \hline
 \end{tabularx}%
 %}
 \end{table}
@@ -845,16 +936,21 @@ Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimien
 \section{17. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+\begin{consigna}{black}
 
 \begin{itemize}
 \item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+	\\ - Responsable: \authorname
+	\\ - Procedimiento: Se analizará si se respetó el plan del proyecto original, corroborando el cumplimiento del calendario y justificando los retrasos, en caso de existir. Se analizará también el cumplimiento de los requerimientos.
+	
 \item Identificación de las técnicas y procedimientos útiles e inútiles que se utilizaron, y los problemas que surgieron y cómo se solucionaron:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-  - Indicar esto y quién financiará los gastos correspondientes.
+	\\ - Responsable: \authorname
+	\\ - Procedimiento: Se analizarán las técnicas y procedimientos utilizados para alcanzar los objetivos, verificando el grado de utilidad resultante para el proyecto. Se discutirá posibles alternativas encontradas y como se abordaron los problemas que surgieron, en caso de corresponder.
+	
+\item Acto de agradecimiento:
+	\\ - Responsable: \authorname
+	\\ - Procedimiento: Se agradecerá a las personas involucradas durante el desarrollo, a los jurados y al Director. Se agradecerá al cliente por confiar en la vinculación con empresas que propone la especialización.
+	
 \end{itemize}
 
 \end{consigna}
