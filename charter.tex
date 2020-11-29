@@ -1,9 +1,10 @@
 \documentclass[11pt]{charter}
 
 \usepackage{makecell}
+\usepackage{lscape}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Red de sensores inalámbricos en invernaderos e indoors automatizados} 
+\titulo{Red de sensores inalámbricos en invernaderos automatizados} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -76,6 +77,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 22/11/2020 \\ \hline
 1.6      & Cuarta entrega
 & 28/11/2020 \\ \hline
+1.7      & Correcciones segunda y tercer entrega. Cambios propuestos por el cliente
+& 29/11/2020 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -124,7 +127,7 @@ En la actualidad, en el sistema de control, los diversos sensores se conectan a 
 Esta solución deberá ser flexible y de fácil adaptación a cualquier tipo de invernadero y/o indoor, así como también, deberá implementar funciones de ahorro de energía para alargar la vida útil de las baterías utilizadas en cada sensor inalámbrico.
 Cada sensor inalámbrico (de ahora en más "nodo"), estará compuesto por un conjunto de componentes: microcontrolador, módulo inalámbrico, sensor y batería. Estos nodos, se comunicarán con la central a través de la red inalámbrica, usando un protocolo de comunicación entre ellos, cuya creación y método de encriptado forma parte del desarrollo de la solución.
 
-En la Figura \ref{fig:diagBloques} se observa el diagrama de bloques de la solución a abordar. Como se mencionó anteriormente, se pueden observar los distintos nodos de la red de sensores inalámbrica, compuestos por el conjunto de componentes detallado. Estos nodos se comunicarán con otro nodo central que estará embebido en el sistema de control que ya tiene desarrollado Wentux, con el cual deberán comunicarse usando el protocolo de comunicación a desarrollar.
+En la figura \ref{fig:diagBloques} se observa el diagrama de bloques de la solución a abordar. Como se mencionó anteriormente, se pueden observar los distintos nodos de la red de sensores inalámbrica, compuestos por el conjunto de componentes detallado. Estos nodos se comunicarán con otro nodo central que estará embebido en el sistema de control que ya tiene desarrollado Wentux, con el cual deberán comunicarse usando el protocolo de comunicación a desarrollar.
 
 El nodo central no tendrá una batería ni ningún tipo de sensor. Este nodo se utilizará como receptor "maestro" {} que recibirá toda la información obtenida de los distintos nodos, y a su vez, como emisor  "maestro" {} para dar instrucciones a los nodos de su red, o bien, para configurar valores en cada nodo.
 Finalmente, el nodo maestro es quien hará disponible la información recavada de los nodos en el dispositivo móvil o computadora.
@@ -157,7 +160,7 @@ Finalmente, el nodo maestro es quien hará disponible la información recavada d
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & \clientename      &\empclientename	& CEO       \\ \hline
+Cliente       & \clientename      &\empclientename	& Director Wentux       \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores & Raúl Palavecino   & -             	& Estudiante ingeniería electrónica       	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
@@ -167,7 +170,7 @@ Usuario final & Productores e \newline independientes \newline pequeña/mediana 
 
 
 \begin{itemize}
-\item Cliente Pablo Lodeti: CEO de Wentux. Desarrolló el actual producto que tiene la empresa.
+\item Cliente Pablo Lodeti: Director de Wentux. Desarrolló el actual producto que tiene la empresa.
 \item Colaborador Raúl Palavecino: estudiante de la carrera ingeniería en electrónica y persona con experiencia en embebidos. 
 \item Orientador Gonzalo Sanchez: magister en sistema embebidos con experiencia en el microcontrolador a utilizar.
 \end{itemize}
@@ -212,7 +215,7 @@ El proyecto no incluye la puesta en funcionamiento en campo y posterior mantenim
 \label{sec:requerimientos}
 
 \begin{consigna}{black}
-Los requerimientos surgen del análisis realizado a la propuesta y relevamiento de proyecto que envía el cliente. Se detallan a continuación, agrupados por afinidad y se indica en cada uno su prioridad, siendo [0] la más alta y [3] la más baja.
+Los requerimientos surgen del análisis realizado a la propuesta y del relevamiento del proyecto que envía el cliente. Estos se detallan a continuación, agrupados por afinidad y se indica en cada uno su prioridad, siendo [0] la más alta y [3] la más baja.
 
 \begin{enumerate}
 \item Grupo de requerimientos asociados con comunicación
@@ -230,7 +233,7 @@ Los requerimientos surgen del análisis realizado a la propuesta y relevamiento 
 	\end{enumerate}
 \item Grupo de requerimientos asociados con generalidades del proyecto
 	\begin{enumerate}
-	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería. El sistema tendrá un máximo de cuatro sensores y la distancia máxima a la central será de 15 metros [0].
+	\item Cada nodo estará compuesto por un conjunto de microcontrolador, módulo inalámbrico, sensor y batería. El sistema tendrá un máximo de seis sensores y la distancia máxima a la central será de 15 metros [0].
 	\item El sistema debe permitir instalarse en cualquier invernadero o indoor [2].
 	\end{enumerate}
 \item Grupo de requerimientos asociados con documentación y codificación
@@ -351,7 +354,7 @@ El proyecto se divide en las siguientes tareas:
 
 \begin{consigna}{black}
 
-En la Figura \ref{fig:aon} se detalla el diagrama de Activity On Node asociado a las tareas del proyecto. Los colores representan las agrupaciones que se realizaron en el desglose del trabajo en tareas, estas son:
+En la figura \ref{fig:aon} se detalla el diagrama de \textbf{\textit{Activity On Node}} {} asociado a las tareas del proyecto. Los colores representan las agrupaciones que se realizaron en el desglose del trabajo en tareas, estas son:
 
 \begin{enumerate}
 	\item Gestión del proyecto (celeste)
@@ -370,11 +373,10 @@ En la Figura \ref{fig:aon} se detalla el diagrama de Activity On Node asociado a
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.9\textwidth]{./Figuras/aon.png}
+\includegraphics[width=16cm]{./Figuras/aon.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:aon}
 \end{figure}
-
 
 
 \section{8. Diagrama de Gantt}
@@ -382,50 +384,23 @@ En la Figura \ref{fig:aon} se detalla el diagrama de Activity On Node asociado a
 
 \begin{consigna}{black}
 
-En la Figura \ref{fig:wbs} se detalla la tabla asociada al diagrama de Gantt. En la Figura \ref{fig:g1}, Figura \ref{fig:g2}, Figura \ref{fig:g3}, Figura \ref{fig:g4} y Figura \ref{fig:g5} se detalla el diagrama de Gantt asociado a las tareas y sus fechas correspondientes.
+En la figura \ref{fig:wbs} se detalla la tabla asociada al diagrama de Gantt. En la figura \ref{fig:g1} se detalla el diagrama de Gantt asociado a las tareas y sus fechas correspondientes.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.9\textwidth]{./Figuras/wbs.PNG}
-\caption{Diagrama en \textit{Activity on Node}}
+\includegraphics[width=18cm]{./Figuras/wbs.png}
+\caption{Tabla diagrama de Gantt}
 \label{fig:wbs}
 \end{figure}
 
+\begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.9\textwidth]{./Figuras/c1.PNG}
-\caption{Diagrama en \textit{Activity on Node}}
+\includegraphics[width=25cm,height=13cm]{./Figuras/calendar.png}
+\caption{Diagrama de Gantt}
 \label{fig:g1}
 \end{figure}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.9\textwidth]{./Figuras/c2.PNG}
-\caption{Diagrama en \textit{Activity on Node}}
-\label{fig:g2}
-\end{figure}
-
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.9\textwidth]{./Figuras/c3.PNG}
-\caption{Diagrama en \textit{Activity on Node}}
-\label{fig:g3}
-\end{figure}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.9\textwidth]{./Figuras/c4.PNG}
-\caption{Diagrama en \textit{Activity on Node}}
-\label{fig:g4}
-\end{figure}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.9\textwidth]{./Figuras/c5.PNG}
-\caption{Diagrama en \textit{Activity on Node}}
-\label{fig:g5}
-\end{figure}
+\end{landscape}
 
 \end{consigna}
 
@@ -436,8 +411,8 @@ Para la ejecución del proyecto se precisan los siguientes materiales:
 
 \begin{enumerate}
 	\item Microcontrolador Blue Pill Stm32f103c8t6 (x4 unidades)
-	\item Módulo Transceptor Rf Nrf24l01 2.4ghz Arduino Pic Avr (x4 unidades)
-	\item Sensor De Humedad Y Temperatura Htu2 (x3 unidades)
+	\item Módulo transceptor Rf Nrf24l01 2,4 GHz Arduino pic avr (x4 unidades)
+	\item Sensor de humedad y temperatura Htu2 (x3 unidades)
 	\item PC (x1 unidad)
 	\item Planta real (indoor o invernadero)
 	\item Producto actual cableado
@@ -452,7 +427,7 @@ Para la ejecución del proyecto se precisan los siguientes materiales:
 \begin{tabularx}{\linewidth}{@{}|X|c|X|X|X|X|X|X|X|@{}}
 \hline
 \cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{7}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-9} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & 1.Micro & 2.NRF & 3.Sensor & 4.PC & 5.Planta & 6.Prod & 7.Pila \\ \hline
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Micro & NRF & Sensor & PC & Planta & Prod & Pila \\ \hline
 
 1.1 & \makecell{Planificación \\ del proyecto}  &  &  &  & 20 & & &\\ \hline
 1.2 & \makecell{Confección informe \\ de avance} &  &  &  & 8 & & &  \\ \hline
@@ -496,7 +471,7 @@ Para la ejecución del proyecto se precisan los siguientes materiales:
 5.2 & \makecell{Implementación del \\prototipo en una \\planta real \\ (indoor o invernadero)} & 30 & 30 & 30 & 30 & 30 & 30 & 30\\ \hline 
 6.1 & \makecell{Confección de la memoria}  &  &  &  & 70 & & & \\ \hline
 6.2 & \makecell{Preparación de \\la presentación final} &  &  &  & 20 & & & \\ \hline
-Total & & 384 & 354 & 159 & 579 & 30 & 54 & 132 \\ \hline
+\makecell{Total \\(horas)} & & 384 & 354 & 159 & 579 & 30 & 54 & 132 \\ \hline
 \end{tabularx}%
 \end{table}
 
@@ -508,7 +483,7 @@ Total & & 384 & 354 & 159 & 579 & 30 & 54 & 132 \\ \hline
 
 \begin{consigna}{black}
 
-Para la elaboración del presupuesto, se tomará un valor de los componentes a la fecha 29/10/2020 en moneda pesos Argentinos. No se considera valor de hora de desarrollo ya que se acordó con el cliente, el pago únicamente de los componentes. Se considera un porcentaje del \% 20 de los costos directos para costos indirectos.
+Para la elaboración del presupuesto, se tomará un valor de los componentes a la fecha 29/10/2020 en moneda pesos Argentinos. Se considera un valor de hora de programación en \$600. Se acordó con el cliente únicamente el pago de los materiales a utilizar. Se considera un porcentaje del 20\% de los costos directos para costos indirectos.
 
 \end{consigna}
 
@@ -529,24 +504,29 @@ Descripción &
   \multicolumn{1}{c|}{562} &
   \multicolumn{1}{c|}{2.248} \\ \hline
   
-  Módulo Transceptor Rf Nrf24l01 2.4ghz Arduino Pic Avr &
+  Módulo transceptor rf Nrf24l01 2,4 GHz Arduino pic avr &
   \multicolumn{1}{c|}{4} &
   \multicolumn{1}{c|}{250} &
   \multicolumn{1}{c|}{1.000} \\ \hline
   
   
-  Sensor De Humedad Y Temperatura Htu2 &
+  Sensor de humedad y temperatura Htu2 &
   \multicolumn{1}{c|}{3} &
   \multicolumn{1}{c|}{699} &
   \multicolumn{1}{c|}{2.097} \\ \hline
    
-  Pila Alcalina Duracell D Grande &
+  Pila alcalina Duracell D grande &
   \multicolumn{1}{c|}{6} &
   \multicolumn{1}{c|}{209,5} &
   \multicolumn{1}{c|}{1.257} \\ \hline
   
+  Mano de obra &
+  \multicolumn{1}{c|}{603} &
+  \multicolumn{1}{c|}{600} &
+  \multicolumn{1}{c|}{361.800} \\ \hline
+  
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{6.602} \\ \hline
+  \multicolumn{1}{c|}{368.402} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -602,14 +582,14 @@ Descripción &
   
   
 
-1.1 & \makecell{Planificación \\ del proyecto}  & P  & I &  & I \\ \hline
-1.2 & \makecell{Confección informe \\ de avance} & P & C &  & I \\ \hline
+1.1 & \makecell{Planificación \\ del proyecto}  & P  & A &  & I \\ \hline
+1.2 & \makecell{Confección informe \\ de avance} & P & A &  & I \\ \hline
 1.3 & \makecell{Análisis y relevamiento \\ inicial} & P &  &  & C \\ \hline
-1.4 & \makecell{Confección manual \\ de instalación} & P &  &  & C/A \\ \hline
-1.5 & \makecell{Confección manual \\ de uso} & P &  &  & C/A \\ \hline
+1.4 & \makecell{Confección manual \\ de instalación} & P &  &  & A \\ \hline
+1.5 & \makecell{Confección manual \\ de uso} & P &  &  & A \\ \hline
 2.1 & \makecell{Definición de \\ componentes} & S &  &  & P\\ \hline
 2.2 & \makecell{Compra de \\componentes} & I &  &  & P \\ \hline
-2.3 & \makecell{Diseño de prototipos \\ de los nodos} & P &  & C & I\\ \hline 
+2.3 & \makecell{Diseño de prototipos \\ de los nodos} & P & I & C & I\\ \hline 
 2.4 & \makecell{Elaboración/construcción \\ de los nodos} & P &  &  & \\ \hline
 3.1 & Diseño de la solución & P & C & C & A\\ \hline
 3.2 & \makecell{Configuración de  \\ herramientas y  \\ plataforma de\\ desarrollo}  & P &  & C & \\ \hline
